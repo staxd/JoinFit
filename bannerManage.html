@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>banner管理</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/base_list.css">
+	<link rel="stylesheet" type="text/css" href="css/bannerManage.css">
+	<link rel="stylesheet" type="text/css" href="javascript/paginationjs/dist/pagination.css">
+	<script type="text/javascript" src="javascript/paginationjs/src/pagination.js"></script>
+	<script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+</head>
+<body>
+	<div class="bannermanage-page" id="content">
+		<div class="topBar">
+			<div class="searchcondition">
+				<span>投放位置:</span>
+				<select id="search_articleType">
+					<option value=""></option>
+				</select>
+			</div>
+			<div class="searchcondition">
+				<span>关键字:</span>
+				<input type="text" name="" id="search_articleName">
+			</div>
+			<button id="searchBtn">搜索</button>
+			<input id="addBanner" type="button" value="+新增"  class="addBtn">
+		</div>
+		<div class="contentBox">
+			<table class="contentList">
+				<thead>
+					<tr>
+						<th class="checkBox">
+							<label>
+								<input type="checkbox" value="" id="selectall-banner">
+							</label>
+						</th>
+						<th class="no-banner">文章编号</th>
+						<th class="img-banner">文章图片</th>
+						<th class="title-banner">文章标题</th>
+						<th class="position-banner">投放位置</th>
+						<!--
+						<th class="content-banner">文章内容</th>
+						-->
+						<th class="state-banner">状态</th>
+						<th class="takeEffect-banner">生效时间</th>
+						<th class="invalid-banner">失效时间</th>
+						<th class="operation-banner handleBtn"><label>操作</label></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--
+					<tr>
+						<td  class="checkBox">
+							<label>
+								<input type="checkbox" value="" class="bannerItem">
+							</label>
+						</td>
+						<td class="no-banner">0001</td>
+						<td class="img-banner">
+							<img src="" alt="img" />
+						</td>
+						<td class="title-banner">文章标题</td>
+						<td class="position-banner">APP首页1banner</td>
+						<td class="content-banner">文章内容.........</td>
+						<td class="state-banner">启用</td>
+						<td class="takeEffect-banner">2018-09-01</td>
+						<td class="invalid-banner">2018-09-01</td>
+						<td class="operation-banner">
+							<div class="operationBox">
+								<div>修改</div>
+								<div>删除</div>
+								<div>禁用</div>
+							</div>
+						</td>
+					</tr>
+					-->
+				</tbody>
+			</table>
+			<div class="bottom-pageNum">
+				<!--
+				<ul>
+					<li><a class="pre-page" href=""></a></li>
+					<li><a class="num-page num-actived" href="">1</a></li>
+					<li><a class="num-page" href="">2</a></li>
+					<li><a class="num-page more-page" href=""></a></li>
+					<li><a class="next-page" href=""></a></li>
+				</ul>
+				-->
+				<div class="bottom-pageNum-box">
+					<div class="showCheck">
+						<select id="showNum">
+							<option value="10"><span>10</span> 条/页</option>
+							<option value="50"><span>50</span> 条/页</option>
+							<option value="100"><span>100</span> 条/页</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascript/bannerManage.js"></script>
+	<script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+</html>

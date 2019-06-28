@@ -1,0 +1,43 @@
+.linkage{
+	display: none;
+}
+
+.addBtn {
+	right: 20px;
+}
+
+.no-diet{
+	width: 10%;
+}
+
+.img-diet{
+	width: 10%;
+}
+
+.firstType-diet{
+	width: 10%;
+}
+
+.title-diet{
+	width: 10%;
+}
+
+.content-diet{
+	width: 15%;
+}
+
+.state-diet{
+	width: 10%
+}
+
+.takeEffect-diet{
+	width: 10%;
+}
+
+/*.invalid-diet{*/
+	/*width: 10%;*/
+/*}*/
+
+.operation-diet{
+	width: 20%;
+}

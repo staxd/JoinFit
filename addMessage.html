@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>发布消息</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/addMessage.css">
+	<link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    <link rel="stylesheet" href="javascript/jquery-ui-1.10.4.custom/css/base/jquery-ui-1.10.4.custom.min.css">
+    <script type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    <script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+
+</head>
+<body>
+	<div class="addMessage-page" id="content">
+		<div class="addMessage-box">
+			<p>发布消息</p>
+			<div class="message-item">
+				<span>消息类型</span>
+				<select>
+					<option>系统消息</option>
+				</select>
+			</div>
+			<div class="message-item">
+				<span>生效时间</span>
+				<input class="dataTime" type="data" id="startTime">
+			</div>
+			<div class="message-item">
+				<span>失效时间</span>
+				<input class="dataTime" type="data" id="endTime">
+			</div>
+			<div class="message-item content-box">
+				<span>消息内容</span>
+				<div class="messageContent">
+					<textarea id="richTextBox" name="content"></textarea>
+				</div>
+			</div>
+			<div class="message-item submitBox">
+				<button class="submitBtn">保存</button>
+				<button class="draft">存草稿</button>
+				<button class="cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascript/addMessage.js"></script>
+</body>
+</html>

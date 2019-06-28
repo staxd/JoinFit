@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新增后台账号</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/addAccount.css">
+
+    <script type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="javascript/md5.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="addAccount-page" id="content">
+        <div class="addAcount-box primaryContainer">
+            <p>新增后台账号</p>
+            <div class="message-item">
+                <span>用户名</span>
+                <input type="text" name="" id="name-account" value="" maxlength="12">
+                <span class="tip_msp_name">用户名不允许为空</span>
+            </div>
+            <div class="message-item">
+                <span>设置密码</span>
+                <input type="password" name="" id="installPassword" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="15" placeholder="请输入6-15位数字或字母组合密码">
+                <span class="tip_msp_password">请输入6-15位密码</span>
+            </div>
+            <div class="message-item">
+                <span>确认密码</span>
+                <input type="password" name="" id="confirmPassword" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="15">
+                <span class="tip_msp">两次密码输入不一致请重新输入</span>
+            </div>
+            <div class="message-item submitBox">
+                <button class="submitBtn">保存</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="javascript/addAccount.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+</html>

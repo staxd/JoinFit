@@ -1,0 +1,283 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #EFF2F7;
+}
+
+select{
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}	
+button{
+	cursor: pointer;
+}	
+select::-ms-expand { display: none; }
+
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none
+}
+
+.topBar{
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	position: relative;
+}
+
+.contentBox{
+	width: 100%;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.contentList{
+	width: 100%;
+	height: 60px;
+	background:rgba(255,255,255,1);
+}
+
+.searchcondition{
+	float: left;
+	margin-left: 20px;
+	line-height: 60px;
+	font-size: 13px;
+}
+
+.searchcondition select{
+	width:150px;
+	height:32px;
+	font-size: 13px;
+	color: #4A4A4A;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(189,189,189,1);
+	background-image: url(../img/drop-downbtn.png);
+	background-repeat: no-repeat;
+	background-position: 124px center;
+	padding-right: 26px;
+	padding-left: 14px;
+}	
+
+.searchcondition input{
+	width:150px;
+	height:32px;
+	padding-left: 5px;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(189,189,189,1);
+}
+
+.topBar button,#addapparatus{
+	width:80px;
+	height:32px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 32px;
+	background:rgba(103,194,58,1);
+	border: 0px;
+	border-radius:2px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	margin-left: 20px;
+}
+
+#addapparatus{
+	right: 20px;
+}
+
+.contentBox,.contentList{
+	width: 100%;
+	overflow: hidden;
+}
+
+.contentList{
+	border: 0;
+	border-collapse: collapse;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.checkBox{
+	position: relative;
+}
+.contentList .clearRow .modify_btn:hover{
+    color: rgba(103,194,58,1);
+}
+.contentList .clearRow .modify_btn{
+    cursor:pointer;
+}
+.contentList .clearRow .delete_btn:hover{
+    color: rgba(103,194,58,1);
+}
+.contentList .clearRow .delete_btn{
+    cursor:pointer;
+}
+
+.contentList input{
+	width: 16px;
+	height: 16px;
+	background-color: #fff;
+	border: 1px solid rgba(189,189,189,1);
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.contentList thead tr{
+	height: 44px;
+	font-size: 13px;
+	color: rgba(74,74,74,1);
+	background:rgba(229,233,242,1);
+}
+
+.contentList tbody tr{
+	height: 60px;
+	font-size: 13px;
+	line-height: 60px;
+	text-align: center;
+	color: rgba(74,74,74,1);
+	background-color: #fff;
+	border-bottom: 1px solid #E0E6ED;
+}
+
+.operationBox{
+	width: 98px;
+	margin: 0 auto;
+}
+
+.operationBox div{
+	float: left;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.no-apparatus{
+	width: 10%;
+}
+
+.img-apparatus{
+	width: 10%;
+}
+
+.type-apparatus{
+	width: 10%;
+}
+
+.name-apparatus{
+	width: 20%;
+	/*width: 10%;*/
+}
+
+.price-apparatus{
+	width: 15%;
+	/*width: 10%;*/
+}
+
+.num-apparatus{
+	width: 8%;
+	display: none;
+}
+
+.surplus-apparatus{
+	width: 8%;
+	display: none;
+}
+
+.time-apparatus{
+	width: 10%;
+}
+
+.operation-apparatus{
+	width: 20%;
+}
+
+.bottom-pageNum{
+	padding: 20px 0;
+	height: 70px;
+	background-color: #fff;
+	position: relative;
+}
+
+.showCheck{
+	float: right;
+	margin-right: 20px;
+}
+
+.showCheck select{
+	width:89px;
+	height:28px;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(211,220,230,1);
+	background-image: url(../img/drop-downbtn1.png.png);
+	background-repeat: no-repeat;
+	background-position: 68px center;
+	padding-right: 25px;
+	padding-left: 5px;
+}
+
+.bottom-pageNum ul{
+	float: right;
+	margin-right: 20px;
+}
+
+.bottom-pageNum ul li{
+	float: left;
+	overflow: hidden;
+}
+
+.bottom-pageNum ul li a{
+	display: inline-block;
+	width:26px;
+	height:26px;
+	font-size:13px;
+	line-height: 26px;
+	color:rgba(71,86,105,1);
+	text-align: center;
+	background-color: #fff;
+	border:1px solid rgba(211,220,230,1);
+}
+
+.bottom-pageNum ul li .pre-page{
+	background-color: rgba(239,242,247,1);
+	background-image: url(../img/pre-page.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-right-style: none;
+	border-radius:2px 0px 0px 2px;
+}
+
+.bottom-pageNum ul li .next-page{
+	background-image: url(../img/next-page.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius:2px 0px 0px 2px;
+}
+
+.bottom-pageNum ul li .num-page{
+	border-right-style: none;
+}
+
+.more-page{
+	background-image: url(../img/more-page.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bottom-pageNum ul li .num-actived{
+	color:rgba(255,255,255,1);
+	background:rgba(103,194,58,1);
+}
+
+

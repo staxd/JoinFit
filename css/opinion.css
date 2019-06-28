@@ -1,0 +1,27 @@
+.content-opinion{
+	width: 25%;
+}
+
+.type-opinion{
+	width: 10%;
+}
+
+.user-opinion{
+	width: 10%;
+}
+
+.state-opinion{
+	width: 10%;
+}
+
+tbody .state-opinion{
+	color: #E51C23;
+}
+
+.establish-opinion{
+	width: 10%;
+}
+
+.operation-opinion{
+	width: 20%;
+}

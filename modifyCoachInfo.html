@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改教练信息</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/modifyCoachInfo.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+</head>
+<body>
+<div class="modifyCoachInfo-page" id="content">
+    <div class="modifyCoachInfo-box primaryContainer">
+        <p>编辑教练信息</p>
+        <div class="message-item upload_file">
+            <span>教练头像</span>
+            <div class="uploadImage upload_fileBox">
+                <span class="uploadImage_btn">+上传教练头像(建议图片尺寸:210*210 px)</span>
+                <input type="file" name="files" style="display: none;" id="avatar-coach" accept="image/*">
+                <div class="sk-circle img_loading">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                </div>
+            </div>
+            <div class="upImageBox show_fileBox"></div>
+        </div>
+        <div class="message-item">
+            <span>教练姓名</span>
+            <input id="name-coach" type="text" name="" maxlength="15" readonly="readonly">
+        </div>
+        <div class="message-item">
+            <span>手机号</span>
+            <input id="phone-coach" type="text" name="" readonly="readonly">
+        </div>
+        <div class="message-item">
+            <span>标签</span>
+            <!--<input id="label-coach" type="text" name="">-->
+            <div class="tags" id="tags" tabindex="1">
+                <input id="form-field-tags" type="text" placeholder="请输入标签 ..." value="Tag Input Control" name="tags" style="display: none;">
+                <input type="text" placeholder="请输入标签 ..." class="tags_enter" autocomplete="off" maxlength="6">
+            </div>
+        </div>
+        <div class="message-item content-box">
+            <span>简介</span>
+            <div class="coachSummary commentBox">
+                <textarea name="coachSummary" id="coachSummaryContent" maxlength="500" onchange="this.value=this.value.substring(0, 500)" onkeydown="this.value=this.value.substring(0, 500)" onkeyup="this.value=this.value.substring(0, 500)"></textarea>
+            </div>
+        </div>
+        <div class="message-item upload_file">
+            <span>门店照片</span>
+            <div class="uploadImage upload_fileBox">
+                <span class="uploadImage_btn-store">+上传门店照片(建议图片尺寸:1080*540 px)</span>
+                <input type="file" name="files" style="display: none;" id="store-coach" accept="image/*">
+                <div class="sk-circle img_loading_next">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                </div>
+            </div>
+            <div class="upImageBox-store show_fileBox"></div>
+        </div>
+        <div class="message-item">
+            <span>门店名称</span>
+            <input id="storeName-coach" type="text" name="" maxlength="16">
+        </div>
+        <div class="message-item">
+            <span>门店地址</span>
+            <input id="storeAddress-coach" type="text" name="">
+            <!--<span class="map_btn" id="map_btn"><img src="img/location.png"></span>-->
+        </div>
+        <div class="message-item">
+            <span>门店电话</span>
+            <input id="storePhone-coach" type="text" name="" onkeyup="value=value.replace(/[^\d{1,}\-\d{1,}|\d{1,}]/g,'')">
+        </div>
+        <div class="message-item content-box">
+            <span>简介</span>
+            <div class="coachStoreSummary commentBox">
+                <textarea name="storeSummary" id="storeSummary" maxlength="140" onchange="this.value=this.value.substring(0, 140)" onkeydown="this.value=this.value.substring(0, 140)" onkeyup="this.value=this.value.substring(0, 140)"></textarea>
+            </div>
+        </div>
+        <div class="message-item submitBox">
+            <button class="submitBtn">保存</button>
+            <button class="cancel">取消</button>
+        </div>
+    </div>
+    <!--<div class="maskLayer" style="clear: both;">-->
+        <!--<div class="mapContainer">-->
+            <!--<div class="GDmap" id="GDmap"></div>-->
+            <!--<span class="closeMapBtn"></span>-->
+        <!--</div>-->
+
+    <!--</div>-->
+</div>
+<script type="text/javascript" src="javascript/modifyCoachInfo.js"></script>
+</body>
+</html>

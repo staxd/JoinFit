@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>添加商品</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/addCommodity.css">
+	<link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+
+</head>
+<body>
+	<div class="addCommodity-page" id="content">
+		<div class="addCommodity-box">
+			<p>添加商品</p>
+			<div class="message-item">
+				<span>商品名称</span>
+				<input type="text" name="">
+			</div>
+			<div class="message-item">
+				<span>商品类型</span>
+				<input type="text" name="">
+			</div>
+			<div class="message-item">
+				<span>兑换积分</span>
+				<input type="text" name="">
+			</div>
+			<div class="message-item">
+				<span>商品数量</span>
+				<input type="text" name="">
+			</div>
+			<div class="message-item">
+				<span>剩余数量</span>
+				<input type="text" name="">
+			</div>
+			<div class="message-item img-banner">
+				<span>商品banner</span>
+				<div class="uploadImg">
+					<span class="uploadImg_btn">+上传banner图片</span>
+					<input type="file" name="files" style="display: none;" accept="image/gif,image/jpg,image/png,image/jpeg" id="banner_img">
+				</div>
+				<div class="upImgBox"></div>				
+			</div>
+			<div class="message-item content-box">
+				<span>商品详情</span>
+				<div class="commodityContent">
+					<textarea id="richTextBox" name="content"></textarea>
+				</div>
+			</div>
+			<div class="message-item submitBox">
+				<button class="submitBtn">保存</button>
+				<button class="cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<script charset="utf-8" type="text/javascript" src="javascript/addCommodity.js"></script>
+</body>
+</html>

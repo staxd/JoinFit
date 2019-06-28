@@ -1,0 +1,4 @@
+span.tip_msp_name,span.tip_msp_password,span.tip_msp_oldPassword{
+    display: none;
+    color: #f00;
+}

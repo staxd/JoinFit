@@ -1,0 +1,231 @@
+.linkage{
+	display: none;
+}
+
+.articleContent{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.articleContent textarea{
+	display: block;
+	width: 70%;
+	max-height: 400px;
+	min-height: 38px;
+	background-color: #EFF2F7;
+	border: none;
+}
+
+.articleContent span{
+	min-width: 0;
+}
+
+.message-item-secondary{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.message-item-secondary span{
+	min-width: 30px;
+}
+
+input.parameter{
+	width: 100px;
+}
+
+select.parameter_name{
+	width: 200px;
+	background-position: 163px center;
+}
+
+.specialIngredients{
+	margin-top: 8px;
+}
+
+.ingredientsBox{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.ingredients{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.ingredients_item{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.ingredients_item span{
+	min-width: 30px;
+}
+
+.step{
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+.step_item{
+	margin-bottom: 10px;
+}
+
+.show_fileBox a{
+	margin: 0;
+}
+
+.step_item span{
+	min-width: 30px;
+}
+
+.step_item_img{
+	display: inline-block;
+}
+
+#addStepBtn{
+	display: block;
+	margin-top: 20px;
+	margin-left: 68px;
+}
+
+.addBtn{
+	border: 0;
+	background-color: #fff;
+	color: #67C23A;
+}
+
+span.addBtn{
+	color: #67C23A;
+}
+
+.stepContent{
+	vertical-align: top;
+	min-width: 260px;
+	min-height: 100px;
+	padding: 5px;
+}
+
+.step_item_img{
+	margin-left: 10px;
+}
+
+img#addFoodBtn{
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.maskLayer{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 99;
+	display: none;
+}
+
+.addFoodPage {
+	position: absolute;
+	left: 200px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 50%;
+	height: 50%;
+	min-width: 670px;
+	min-height: 158px;
+	background-color: #fff;
+	opacity: 1;
+	overflow: hidden;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	padding: 50px;
+}
+
+.addFoodPage p{
+	min-width: 64px;
+	height: 14px;
+	font-size: 16px;
+	color: rgba(103, 194, 58, 1);
+	line-height: 14px;
+	margin-bottom: 30px;
+}
+
+.message-item_add {
+	margin-bottom: 14px;
+}
+
+.message-item_add span {
+	display: inline-block;
+	min-width: 56px;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(74, 74, 74, 1);
+	margin-right: 12px;
+}
+
+.message-item_add input {
+	display: inline-block;
+	width: 500px;
+	height: 32px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	border: 1px solid rgba(189, 189, 189, 1);
+	padding-left: 5px;
+
+}
+
+.submitBtn_add {
+	width: 88px;
+	height: 36px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 36px;
+	background: rgba(103, 194, 58, 1);
+	border-radius: 2px;
+	border: none;
+}
+
+.cancel_add {
+	width: 64px;
+	height: 36px;
+	border-radius: 2px;
+	font-size: 14px;
+	color: rgba(31, 45, 61, 1);
+	line-height: 36px;
+	background-color: #fff;
+	border: 1px solid rgba(196, 196, 196, 1);
+}
+
+.upImgBox_step{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 0;
+	margin-left: 10px;
+}
+
+.stepBlock_del{
+	margin-left: 20px;
+}
+
+.special{
+	margin-bottom: 14px;
+}
+
+.special_name{
+	display: inline-block;
+	min-width: 56px;
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(74, 74, 74, 1);
+	margin-right: 12px;
+}
+
+.special select{
+	width: 507px;
+	height: 34px;
+}

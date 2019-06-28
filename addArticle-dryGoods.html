@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>添加干货文章</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/base_details.css">
+	<link rel="stylesheet" type="text/css" href="css/addArticle-dryGoods.css">
+	<link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+    <!--<link rel="stylesheet" href="javascript/jquery-ui-1.10.4.custom/css/base/jquery-ui-1.10.4.custom.min.css">
+    <script charset="utf-8" type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>-->
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+    <!--<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>-->
+
+</head>
+<body>
+	<div class="addDryGoods-page" id="content">
+		<div class="addDryGoods-box primaryContainer">
+			<p>添加干货文章</p>
+			<div class="message-item">
+				<span>文章名称</span>
+				<input type="text" name="" id="title_acticle" maxlength="50">
+			</div>
+			<!--
+			<div class="message-item">
+				<span>文章类型</span>
+				<select>
+					<option></option>
+				</select>
+			</div>
+			-->
+			<div class="message-item">
+				<span>发布状态</span>
+				<select id="type_article">
+					<option value="0">暂存</option>
+				</select>
+			</div>
+			<div class="message-item">
+				<span>显示顺序</span>
+				<input type="text" name="" id="showOrder_dryGoods" placeholder="例：1" maxlength="50">
+			</div>
+			<div class="message-item">
+				<span>生效时间</span>
+				<input class="timeBox" type="data" id="startTime_dryGoods" />
+			</div>
+			<div class="message-item">
+				<span>失效时间</span>
+				<input class="timeBox" type="data" id="endTime_dryGoods" />
+			</div>
+			<div class="message-item">
+				<span>文章标签</span>
+				<input type="text" name="" id="label_acticle" placeholder="例：精选,训练" maxlength="50">
+			</div>
+			<div class="message-item upload_file">
+				<span>文章banner</span>
+				<div class="uploadImg upload_fileBox">
+					<span class="uploadImg_btn">+上传banner图片(建议图片尺寸:720*288 px)</span>
+					<input type="file" name="files" style="display: none;" accept="image/*" id="banner_img">
+					<div class="sk-circle img_loading">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+				</div>
+				<div class="upImgBox show_fileBox"></div>				
+			</div>
+			<div class="message-item content-box">
+				<span>文章详情</span>
+				<div class="articleContent">
+					<textarea id="richTextBox" name="content"></textarea>
+                    <textarea name="schtmlnr" id="schtmlnr" style="display:none;"></textarea>
+				</div>
+			</div>
+			<div class="message-item submitBox">
+				<button class="submitBtn">保存</button>
+				<button class="cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<script charset="utf-8" type="text/javascript" src="javascript/addArticle-dryGoods.js"></script>
+</body>
+</html>

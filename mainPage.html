@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JoinFit后台管理系统</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+	<script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+
+	<link rel="icon" href="img/mainLogo.png" sizes="32x32">
+	
+	<link rel="stylesheet" type="text/css" href="css/mainPage.css">
+
+	<link rel="stylesheet" href="javascript/jquery-ui-1.10.4.custom/css/base/jquery-ui-1.10.4.custom.min.css">
+	<link rel="stylesheet" type="text/css" href="javascript/jquery-ui-1.10.4.custom/jquery-ui-timepicker-addon.css">
+
+	<link rel="stylesheet" type="text/css" href="javascript/toastr/toastr.min.css">
+	
+	<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="javascript/jquery-ui-1.10.4.custom/jquery-ui-timepicker-addon.js"></script>
+	<script type="text/javascript" src="javascript/jquery-ui-1.10.4.custom/jquery-ui-timepicker-zh-CN.js"></script>
+	<script type="text/javascript" src="javascript/jquery.ba-resize.js"></script>
+
+	<script type="text/javascript" src="javascript/toastr/toastr.js"></script>
+</head>
+<body>
+	<div class="nav">
+		<div class="logo">
+			<img src="img/mainLogo.png" alt="logo.png" />
+			<span>JOINFIT</span>
+		</div>
+		<div class="positionNav"></div>
+		<div class="personalList">
+			<a class="avatar"><img src="img/mainLogo.png" alt="avatar.png" /></a>
+			<a class="systemMessage"><img src="img/message_icon.png" alt="systemMessage.png" /></a>
+			<a class="setUp"><img src="img/setUp_top.png" alt="setUp.png" /><div id="signOut"><div class="arrow"></div>退出登录</div></a>
+		</div>
+	</div>
+	<div class="sideNav">
+		<div class="emptyBox"></div>
+		<div class="userManagement sideNav-item actived">
+			<a>用户管理</a>
+		</div>
+		<div class="coachManagement sideNav-item">
+			<a>教练管理</a>
+			<img class="sideNav-icon" src="img/drop-down.png" alt="drop-down.png" />
+		</div>
+		<div class="coachType showBox">
+			<div class="coachApply moreMenu-item">
+				<a>教练申请</a>
+			</div>
+			<div class="coachInfo moreMenu-item">
+				<a>教练信息</a>
+			</div>
+		</div>
+		<div class="circleManagement sideNav-item">
+			<a>圈子管理</a>
+		</div>
+		<div class="marketingManagement sideNav-item">
+			<a>营销管理</a>
+			<img class="sideNav-icon" src="img/drop-down.png" alt="drop-down.png" />
+		</div>
+		<div class="marketType showBox">
+			<div class="bannerManage moreMenu-item">
+				<a>Banner管理</a>
+			</div>
+			<div class="dryGoods moreMenu-item">
+				<a>精选干货</a>
+			</div>
+			<div class="instrument moreMenu-item">
+				<a>器械</a>
+			</div>
+			<div class="actionLib moreMenu-item">
+				<a>动作库</a>
+			</div>
+			<div class="trainProgram moreMenu-item">
+				<a>训练</a>
+			</div>
+			<div class="apparatusMall moreMenu-item">
+				<a>器械商城</a>
+			</div>
+			<div class="diet moreMenu-item">
+				<a>饮食</a>
+			</div>
+		</div>
+		<div class="integralMall sideNav-item">
+			<a>积分商城</a>
+		</div>
+		<div class="orderManagement sideNav-item">
+			<a>订单管理</a>
+		</div>
+		<div class="system-setup sideNav-item">
+			<a>系统设置</a>
+			<img class="sideNav-icon" src="img/drop-down.png" alt="drop-down.png" />
+		</div>
+		<div class="setupType showBox">
+			<div class="messageManage moreMenu-item">
+				<a>消息管理</a>
+			</div>
+			<div class="userOpinion moreMenu-item">
+				<a>用户反馈</a>
+			</div>
+			<div class="accountManage moreMenu-item">
+				<a>后台账号</a>
+			</div>
+			<div class="modifyPassword moreMenu-item">
+				<a>修改密码</a>
+			</div>
+		</div>
+	</div>
+	<div class="mainContent"></div>
+	<script type="text/javascript" src="javascript/partdata.js"></script>
+	<script type="text/javascript" src="javascript/mainPage.js"></script>
+	
+</body>
+</html>

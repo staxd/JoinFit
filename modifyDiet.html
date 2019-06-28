@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改饮食文章</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/addArticle-diet.css">
+    <link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+    <link rel="stylesheet" href="javascript/select2-4.0.6/dist/css/select2.min.css">
+    <!--<link rel="stylesheet" href="javascript/jquery-ui-1.10.4.custom/css/base/jquery-ui-1.10.4.custom.min.css">
+    <script charset="utf-8" type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>-->
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+    <script src="javascript/select2-4.0.6/dist/js/select2.min.js"></script>
+    <!--<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="javascript/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>-->
+
+</head>
+<body>
+<div class="addDiet-page" id="content">
+    <div class="addDiet-box primaryContainer">
+        <p>修改饮食文章</p>
+        <div class="message-item">
+            <span>文章名称</span>
+            <input type="text" name="" id="title_diet" maxlength="50">
+        </div>
+        <div class="special">
+            <span class="special_name">分类</span>
+            <select id="topCategory_diet" class="selectpicker show-tick form-control" multiple data-live-search="false">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="message-item linkage">
+            <span>二级分类</span>
+            <select id="secondCategory_diet">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="message-item">
+            <span>发布状态</span>
+            <select id="type_diet">
+                <option value="0">删除</option>
+                <option value="1">正常</option>
+            </select>
+        </div>
+        <div class="message-item">
+            <span>饮食标签</span>
+            <input type="text" name="" id="label_diet" placeholder="例：精选,训练" maxlength="50">
+        </div>
+        <div class="message-item upload_file">
+            <span>文章banner</span>
+            <div class="uploadImg upload_fileBox">
+                <span class="uploadImg_btn">+上传banner图片(建议图片尺寸:720*288 px)</span>
+                <input type="file" name="files" style="display: none;" accept="image/*" id="banner_img">
+                <div class="sk-circle img_loading">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                </div>
+            </div>
+            <div class="upImgBox show_fileBox"></div>
+        </div>
+        <div class="message-item content-box">
+            <span>文章详情</span>
+            <div class="articleContent">
+                <textarea id="richTextBox" name="content"></textarea>
+                <textarea name="schtmlnr" id="schtmlnr" style="display:none;"></textarea>
+            </div>
+        </div>
+        <div class="message-item">
+            <span>饮食参数</span>
+            <div class="message-item-secondary">
+                <span>千卡</span>
+                <input type="text" name="" id="calorie" class="parameter" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" maxlength="20" />
+            </div>
+            <div class="message-item-secondary">
+                <span>碳水(g)</span>
+                <input type="text" name="" id="carbohydrate" class="parameter" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" maxlength="20" />
+            </div>
+            <div class="message-item-secondary">
+                <span>蛋白质(g)</span>
+                <input type="text" name="" id="protein" class="parameter" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" maxlength="20" />
+            </div>
+            <div class="message-item-secondary">
+                <span>脂肪(g)</span>
+                <input type="text" name="" id="fat" class="parameter" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" maxlength="20" />
+            </div>
+        </div>
+        <div class="message-item">
+            <span class="specialIngredients">食材</span>
+            <div class="ingredientsBox">
+                <div class="ingredients">
+                    <div class="ingredients_item">
+                        <span>名称</span>
+                        <select id="ingredients_0" class="parameter_name">
+                            <option value=""></option>
+                        </select>
+                        <!--<input type="text" name="" id="ingredients_0" class="parameter_name" maxlength="50" />-->
+                    </div>
+                    <div class="ingredients_item">
+                        <span>用量(g)</span>
+                        <input type="text" name="" id="consumption_0" class="parameter" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" maxlength="20" />
+                    </div>
+                    <button id="addIngredientsBtn" class="addBtn">+新增食材</button>
+                    <img id="addFoodBtn" src="img/food.png" alt="food.png"/>
+                </div>
+            </div>
+            <!--<button id="addIngredientsBtn" class="addBtn">+新增食材</button>-->
+            <!--<img id="addFoodBtn" src="img/food.png" alt="food.png"/>-->
+        </div>
+        <div class="message-item">
+            <span>步骤</span>
+            <div class="step">
+                <div class="step_item">
+                    <span class="stepCount">Step1</span>
+                    <textarea class="stepContent"></textarea>
+                    <div class="step_item_img">
+                        <span class="stepImgBtn addBtn">+添加图片</span>
+                        <input type="file" name="files" class="stepImg" id="stepImg_0" style="display: none;" accept="image/*" />
+                    </div>
+                    <div class="upImgBox_step show_fileBox"></div>
+                </div>
+            </div>
+            <button id="addStepBtn" class="addBtn">+新增步骤</button>
+        </div>
+        <div class="message-item submitBox">
+            <button class="submitBtn">保存</button>
+            <button class="cancel">取消</button>
+        </div>
+    </div>
+    <div class="maskLayer" style="clear: both;">
+        <div class="addFoodPage">
+            <p>添加食材</p>
+            <div class="message-item_add">
+                <span>食材名称</span>
+                <input type="text" name="" id="foodName_add" maxlength="50">
+            </div>
+            <div class="message-item_add submitBox">
+                <button class="submitBtn_add">保存</button>
+                <button class="cancel_add">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+<script charset="utf-8" type="text/javascript" src="javascript/modifyDiet.js"></script>
+</body>
+</html>

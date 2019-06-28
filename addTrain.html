@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>添加训练</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/addTrain.css">
+    <!--
+    <link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    -->
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+    <link rel="stylesheet" type="text/css" href="javascript/paginationjs/dist/pagination.css">
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <script type="text/javascript" src="javascript/paginationjs/src/pagination.js"></script>
+    <!--
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    -->
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/vendor/jquery.ui.widget.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+</head>
+
+<body>
+    <div class="addTrain-page" id="content">
+        <div class="addTrain-box primaryContainer">
+            <p>添加训练</p>
+            <div class="message-item">
+                <span>训练名称</span>
+                <input type="text" name="" id="name-train" maxlength="50">
+            </div>
+            <div class="message-item">
+                <span>训练状态</span>
+                <select id="state-train">
+                    <option value="1">启用</option>
+                </select>
+            </div>
+            <div class="message-item">
+                <span>卡路里</span>
+                <input type="text" name="" id="calorie-train" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="例：0.0">&nbsp;cal
+            </div>
+            <div class="message-item">
+                <span>时长</span>
+                <input type="text" name="" id="time-train" maxlength="11" placeholder="例：00:00:00">
+                <span class="tip_msp">格式不正确请重新输入</span>
+            </div>
+            <div class="message-item">
+                <span>难度</span>
+                <select id="level-train">
+                </select>
+            </div>
+            <div class="message-item">
+                <span>部位</span>
+                <select id="position-train">
+                </select>
+            </div>
+            <div class="message-item">
+                <span>休息时间</span>
+                <input type="text" name="" id="restTime-train" maxlength="11" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="例：10"> 秒
+            </div>
+            <!--
+            <div class="message-item">
+                <span>器械</span>
+
+                <select id="apparatus-train" multiple="multiple" size="1">
+                </select>
+
+                <select id="apparatus-train">
+                </select>
+            </div>
+            -->
+            <div class="message-item upload_file">
+                <span>训练图片</span>
+                <div class="uploadImage upload_fileBox">
+                    <span class="uploadImage_btn">+上传训练图片(建议图片尺寸:720*240 px)</span>
+                    <input type="file" name="files" style="display: none;" id="train_image" accept="image/*">
+                    <div class="sk-circle">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+                <div class="upImageBox show_fileBox"></div>
+            </div>
+            <div class="message-item upload_file">
+                <span>训练视频</span>
+                <div class="chooseVideo upload_fileBox">
+                    <span class="chooseVideo_btn">+选择动作视频</span>
+                </div>
+                <div class="chooseVideoBox show_fileBox"></div>
+            </div>
+            <div class="message-item content-box">
+                <span>训练简介</span>
+                <div class="trainSummary commentBox">
+                    <!--<textarea id="richTextBox" name="content"></textarea>-->
+                    <textarea name="schtmlnr" id="schtmlnr"></textarea>
+                </div>
+            </div>
+            <div class="message-item submitBox">
+                <button class="submitBtn">保存</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+        <div class="maskLayer" style="clear: both;">
+            <div class="actionChoose chooseBox">
+                <div class="actionChoose_title chooseBox_title">
+                    <label>选择动作视频</label>
+                </div>
+                <div class="actionChoose_search searchBox_choose">
+                    <div class="search_content">
+                        <label>动作名称：</label>
+                        <input type="text" name="" id="search_actionName">
+                    </div>
+                    <div class="search_content">
+                        <label>使用器械：</label>
+                        <select id="search_apparatus">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <button id="searchBtn">搜索</button>
+                </div>
+                <div class="actionChoose_list  chooseBox_list">
+                    <table class="actionChoose_listContent chooseBox_listConetent">
+                        <tbody>
+                            <!--<tr class="actionChoose_item">
+                                <td class="action_img">
+                                    <img src="" alt="action.png" />
+                                </td>
+                                <td class="action_name">辅助卷腹</td>
+                                <td class="action_time">120″</td>
+                                <td class="action_apparatus">XX器械</td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagingBox">
+                    <div class="pagingBox-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script charset="utf-8" type="text/javascript" src="javascript/addTrain.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+
+</html>

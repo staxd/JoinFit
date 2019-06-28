@@ -1,0 +1,182 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #EFF2F7;
+}
+
+.addCommodity-page{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.addCommodity-box{
+	padding-left: 40px;
+	padding-top: 40px;
+	overflow: hidden;
+}
+
+.addCommodity-page p{
+	width:64px;
+	height:14px;
+	font-size:16px;
+	color:rgba(103,194,58,1);
+	line-height:14px;
+	margin-bottom: 30px;
+}
+
+.message-item{
+	margin-bottom: 14px;
+}
+
+.message-item span{
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(74,74,74,1);
+	margin-right: 12px;
+}
+
+.message-item input{
+	display: inline-block;
+	width:500px;
+	height:32px;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(189,189,189,1);
+	padding-left: 5px;
+	
+}
+
+.img-banner{
+	margin-top: 8px;
+}
+
+.uploadImg span{
+	font-size:14px;
+	color:rgba(103,194,58,1);
+	line-height:19px;
+}
+
+.uploadImg{
+	display: inline-block;
+}
+
+.upImgBox{
+	margin-left: 72px;
+	margin-top: 10px;
+}
+
+.upImgBox{
+	margin-top: 20px;
+	text-align: left;
+}
+
+.upImgBox a{
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	height: 100px;
+	border: 1px solid #e3e3e3;
+	margin: 0 10px 10px 0;
+}
+
+.upImgBox a:hover{
+	opacity: 1;
+}
+
+.upImgBox a img{
+	width: 100%;
+	height: 100%
+}
+
+.upImgBox a i{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 16px;
+	vertical-align: middle;
+	text-align: center;
+	background-image: url(../img/delBtn.png);
+	background-size: 22px;
+	color: #fff;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.upImgBox a i:hover{
+	opacity: 1;
+}
+
+.del_icon{
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-align: center;
+    background-image: url(../img/delBtn.png);
+    background-size: 22px;
+    transition: transform .5s;
+    color: #fff;
+}
+
+.content-box{
+	overflow: hidden;
+}
+
+.commodityContent{
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.commodityContent textarea{
+	display: block;
+	width: 70%;
+	max-height: 400px;
+	min-height: 38px;
+	background-color: #EFF2F7;
+	border: none;
+}
+
+.submitBox{
+	margin-top: 20px;
+	border-top: 1px solid #E0E6ED;
+	width: 428px;
+	overflow: hidden;
+}
+
+.submitBox button{
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.submitBtn{
+	width:88px;
+	height:36px;
+	font-size:14px;
+	color: #fff;
+	line-height: 36px;
+	background:rgba(103,194,58,1);
+	border-radius:2px;
+	border: none;
+}
+
+.cancel{
+	width:64px;
+	height:36px;
+	border-radius:2px;
+	font-size:14px;
+	color:rgba(31,45,61,1);
+	line-height: 36px;
+	border:1px solid rgba(196,196,196,1);
+}

@@ -1,0 +1,39 @@
+.addBtn{
+	right: 20px;
+}
+
+.no-banner{
+	width: 10%;
+}
+
+.img-banner{
+	width: 10%;
+}
+
+.title-banner{
+	width: 15%;
+}
+
+.position-banner{
+	width: 10%;
+}
+
+/*.content-banner{*/
+	/*width: 15%;*/
+/*}*/
+
+.state-banner{
+	width: 10%;
+}
+
+.takeEffect-banner{
+	width: 10%;
+}
+
+.invalid-banner{
+	width: 10%;
+}
+
+.operation-banner{
+	width: 20%;
+}

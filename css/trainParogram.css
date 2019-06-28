@@ -1,0 +1,48 @@
+#addTrain {
+    right: 20px;
+}
+
+.name-trainProgram {
+    width: 12%;
+}
+
+.video-trainProgram {
+    width: 10%;
+}
+
+.num-trainProgram {
+    width: 7%;
+}
+
+.lengthTime-trainProgram {
+    width: 6%;
+
+}
+
+.content-trainProgram {
+    width: 12%;
+}
+
+.difficulty-trainProgram {
+    width: 6%;
+}
+
+.position-trainProgram {
+    width: 6%;
+}
+
+.apparatus-trainProgram {
+    width: 6%;
+}
+
+.state-trainProgram {
+    width: 6%;
+}
+
+.invalid-trainProgram {
+    width: 9%;
+}
+
+.operation-trainProgram {
+    width: 15%;
+}

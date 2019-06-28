@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>添加动作</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/addAction.css">
+    <!--
+    <link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    -->
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+    <script charset="utf-8" type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <!--
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    -->
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/vendor/jquery.ui.widget.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/hand.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/sendAjax.js"></script>
+
+</head>
+<style>
+    .checks_div_select {
+        width: 503px;
+        background-color: #fff;
+        border: 1px solid #a6c7fe;
+        font-family: 'Verdana', '宋体';
+        font-size: 12px;
+        position: absolute;
+        top: 35px;
+        left: 73px;
+        z-index: 1;
+    }
+
+    .modify_click {
+        width: 20px !important;
+        height: 20px !important;
+        margin: 0 5px;
+    }
+</style>
+<body>
+    <div class="addAction-page" id="content">
+        <div class="addAction-box primaryContainer">
+            <p>添加动作</p>
+            <div class="message-item">
+                <span>动作名称</span>
+                <input type="text" name="" id="name-action" maxlength="50">
+            </div>
+            <div class="message-item">
+                <span>动作状态</span>
+                <select id="state-action">
+                    <option value="1">启用</option>
+                </select>
+            </div>
+            <div class="message-item">
+                <span>动作时长</span>
+                <input type="text" name="" id="time-action" maxlength="11" placeholder="例：00:00:00">
+                <span class="tip_msp">格式不正确请重新输入</span>
+            </div>
+            <div class="message-item">
+                <span>动作难度</span>
+                <select id="level-action">
+                </select>
+            </div>
+            <div style="position:relative;" class="message-item">
+                <span>锻炼部位</span>
+                <input type="text" id="test_div" class="form-control" readonly unselectable="on" placeholder='全部' data-null='1000' data-id=''/>
+            </div>
+
+
+
+            <!-- <div class="message-item">
+                <span>锻炼部位</span>
+                <select id="position-action">
+                </select>
+            </div> -->
+            <div class="message-item">
+                <span>使用器械</span>
+                <select id="apparatus-action">
+                </select>
+            </div>
+            <div class="message-item upload_file">
+                <span>动作视频</span>
+                <div class="uploadVideo upload_fileBox">
+                    <span class="uploadVideo_btn">+上传动作视频</span>
+                    <input type="file" name="files" style="display: none;" id="action_video" accept="video/*">
+                    <div class="sk-circle video_loading">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+                <div class="upVideoBox show_fileBox"></div>
+            </div>
+            <div id="addActionList">
+                <div class="message-item">
+                    <span>动作步骤</span>
+                    <input type="text" name=""  maxlength="50">
+                </div>
+            </div>
+            <div class="upload_fileBox" style="width:100%;margin:0px 72px 10px">
+                <span id="addAction">+新增步骤</span>
+            </div>
+
+            <div class="message-item">
+                <span>呼吸要领</span>
+                <input type="text" name="" id="breathEssential" maxlength="50">
+            </div>
+            <div id="addGsList">
+                <div class="message-item">
+                    <span>动作感受</span>
+                    <input type="text" name=""  maxlength="50">
+                </div>
+            </div>
+
+            <div class="upload_fileBox" style="width:100%;margin:0px 72px 10px">
+                <span id="addGs">+新增感受</span>
+            </div>
+            <div class="upload_fileBox" style="width:100%;margin:0px 72px 10px">
+                <span class="uploadImage_btn" data-id="0">+添加感受图片(最多可添加两张)</span>
+                <div class="sk-circle img_loading">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                </div>
+            </div>
+            <div class="upImageBox show_fileBox" id="feel_box_img"></div>
+
+            <div id="addYcList">
+                <div class="message-item">
+                    <span>益处</span>
+                    <input type="text" name="" maxlength="50">
+                </div>
+            </div>
+
+            <div class="upload_fileBox" style="width:100%;margin:0px 72px 10px">
+                <span id="addYc">+新增益处</span>
+            </div>
+            <div id="cuowuList">
+                <div class="message-item">
+                    <span>常见错误</span>
+                    <input type="text" name="" maxlength="50">
+                </div>
+            </div>
+
+            <div class="upload_fileBox" style="width:100%;margin:0px 72px 10px">
+                <span id="addCw">+新增错误</span>
+            </div>
+            <!-- <div class="message-item">
+                <span>动作积分</span>
+                <input type="text" name="" id="integral-action" maxlength="11"
+                    onkeyup="value=this.value.replace(/\D+/g,'')" placeholder="例：0">
+            </div> -->
+
+
+
+            <div class="message-item upload_file">
+                <span>动作图片</span>
+                <div class="uploadImage upload_fileBox">
+                    <span class="uploadImage_btn" data-id="1">+上传动作图片(建议图片尺寸:144*96 px)</span>
+                    <input type="file" name="files" style="display: none;" id="action_image" accept="image/*">
+                    <div class="sk-circle img_loading">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+                <div class="upImageBox show_fileBox" id="action_box_img"></div>
+            </div>
+
+            <!-- <div class="message-item content-box">
+                <span>动作简介</span>
+                <div class="actionSummary commentBox">
+                    <textarea name="schtmlnr" id="schtmlnr"></textarea>
+                </div>
+            </div> -->
+            <div class="message-item submitBox">
+                <button class="submitBtn">保存</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <script id="info_template_bz" type="text/x-handlebars-template">
+        <div class="message-item">
+            <span class="txtR"></span>
+            <input type="text" name="" maxlength="50">
+            <text class="color_red cursor_pointer font_14 delBz">删除</text>
+        </div>
+    </script>
+    <script id="info_template_gs" type="text/x-handlebars-template">
+                <div class="message-item">
+                    <span class="txtR"></span>
+                    <input type="text" name="" maxlength="50">
+                    <text class="color_red cursor_pointer font_14 delGs">删除</text>
+                </div>
+    </script>
+    <script id="info_template_yc" type="text/x-handlebars-template">
+            <div class="message-item">
+                <span class="txtR"></span>
+                <input type="text" name="" maxlength="50">
+                <text class="color_red cursor_pointer font_14 delYc">删除</text>
+            </div>
+    </script>
+    <script id="info_template_cw" type="text/x-handlebars-template">
+                <div class="message-item">
+                    <span class="txtR"></span>
+                    <input type="text" name="" maxlength="50">
+                    <text class="color_red cursor_pointer font_14 delCw">删除</text>
+                </div>
+        </script>
+    <script charset="utf-8" type="text/javascript" src="javascript/addAction.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+
+</html>

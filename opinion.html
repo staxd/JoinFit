@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户反馈</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/base_list.css">
+	<link rel="stylesheet" type="text/css" href="css/opinion.css">
+	<link rel="stylesheet" type="text/css" href="javascript/paginationjs/dist/pagination.css">
+	<script type="text/javascript" src="javascript/paginationjs/src/pagination.js"></script>
+	<script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+</head>
+<body>
+	<div class="opinion-page" id="content">
+		<div class="topBar">
+			<div class="searchcondition">
+				<span>关键字:</span>
+				<input type="text" name="" id="search_opinionContent">
+			</div>
+			<button id="searchBtn">搜索</button>
+		</div>
+		<div class="contentBox">
+			<table class="contentList">
+				<thead>
+					<tr>
+						<th class="checkBox">
+							<label>
+								<input type="checkbox" value="" id="selectall-opinion">
+							</label>
+						</th>
+						<th class="content-opinion">反馈内容</th>
+						<th class="type-opinion">反馈类型</th>
+						<th class="user-opinion">用户</th>
+						<th class="state-opinion">状态</th>
+						<th class="establish-opinion">创建时间</th>
+						<th class="operation-opinion handleBtn"><label>操作</label></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+				<!--
+					<tr>
+						<td  class="checkBox">
+							<label>
+								<input type="checkbox" value="" class="opinionItem">
+							</label>
+						</td>
+						<td class="content-opinion">反馈内容.........</td>
+						<td class="type-opinion">系统bug</td>
+						<td class="user-opinion">张三李四</td>
+						<td class="state-opinion">已处理</td>
+						<td class="establish-opinion">2018-09-01</td>
+						<td class="operation-opinion">
+							<div class="operationBox">
+								<div>处理</div>
+								<div>删除</div>
+							</div>
+						</td>
+					</tr>
+					-->
+				</tbody>
+			</table>
+			<div class="bottom-pageNum">
+				<!--<ul>
+					<li><label class="pre-page"></label></li>
+					<li><label class="num-page num-actived firstPage">1</label></li>
+					<li><label class="num-page more-page left-more"></label></li>
+					<li><label class="num-page more-page right-more"></label></li>
+					<li><label class="next-page"></label></li>
+				</ul>-->
+				<div class="bottom-pageNum-box">
+					<div class="showCheck">
+						<select id="showNum">
+							<option value="10"><span>10</span> 条/页</option>
+							<option value="50"><span>50</span> 条/页</option>
+							<option value="100"><span>100</span> 条/页</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascript/opinion.js"></script>
+	<script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+</html>

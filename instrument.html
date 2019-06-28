@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/base_list.css">
+	<link rel="stylesheet" type="text/css" href="css/actionLib.css">
+	<link rel="stylesheet" type="text/css" href="javascript/paginationjs/dist/pagination.css">
+	<script type="text/javascript" src="javascript/paginationjs/src/pagination.js"></script>
+	<script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+	<script charset="utf-8" type="text/javascript" src="javascript/hand.js"></script>
+	<script charset="utf-8" type="text/javascript" src="javascript/sendAjax.js"></script>
+	<script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+
+</head>
+<style>
+	a {
+		color: #c0ccda;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: rgba(103, 194, 58, 1);
+		text-decoration: none;
+	}
+
+	body {
+		background-color: #EFF2F7;
+	}
+
+	.modal-footer {
+		min-height: 60px;
+	}
+
+	.mask {
+		background: #000;
+		opacity: .55;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		position: fixed;
+	}
+
+	.topBar button,
+	.addBtn {
+		line-height: 20px;
+		border-radius: 0px;
+		position: relative;
+		margin: 0;
+	}
+
+	.instrumentSearchBtn {
+		margin: 14px !important;
+	}
+
+	.addBtn {
+		position: absolute;
+		right: 30px;
+		top: 14px;
+
+	}
+
+	.show_fileBox {
+		width: 100px;
+		min-height: 0px;
+		max-height: 100px;
+		margin: 20px;
+		position: relative;
+	}
+
+	.del_icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+		vertical-align: middle;
+		text-align: center;
+		background-image: url(./img/delBtn.png);
+		background-size: 22px;
+		cursor: pointer;
+		color: #000;
+		transition: transform .5s;
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.postDetailsBox {
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		width: 600px;
+		height: 350px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101;
+		display: none;
+	}
+
+	.postDetails-head,
+	.audit-head {
+		position: relative;
+		width: 100%;
+		height: 44px;
+		background: #283345;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		margin-bottom: 10px;
+
+	}
+
+	.postDetails-head-text,
+	.audit-head-text {
+		position: absolute;
+		left: 0;
+		line-height: 44px;
+		color: #F5F5F5;
+		font-size: 12px;
+		margin-left: 20px;
+		-webkit-touch-callout: none;
+		/* iOS Safari */
+
+		-webkit-user-select: none;
+		/* Chrome/Safari/Opera */
+
+		-khtml-user-select: none;
+		/* Konqueror */
+
+		-moz-user-select: none;
+		/* Firefox */
+
+		-ms-user-select: none;
+		/* Internet Explorer/Edge */
+
+		user-select: none;
+		/* Non-prefixed version, currently
+
+           not supported by any browser */
+	}
+
+	.postDetails-body {
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 600px;
+		height: 540px;
+		position: relative;
+		color: #797979;
+	}
+
+	.postDetails-body-box {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 94%;
+		min-height: 220px;
+	}
+
+	.postDetails-body-box-head {
+		width: 100%;
+		height: 45px;
+	}
+
+	.postDetails-body-box-head-left {
+		width: 80%;
+		height: 100%;
+		float: left;
+	}
+
+	.postDetails-body-box-head-right {
+		width: 19%;
+		height: 100%;
+		float: left;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.postDetails-body-box-head-left-icon {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		float: left;
+		margin-right: 20px;
+
+	}
+
+	.postDetails-body-box-head-left-icon img {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	.postDetails-body-box-head-left-content {
+		min-width: 100px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		float: left;
+	}
+
+	.postDetails-body-box-head-left-content-up {
+		min-width: 100px;
+		height: 49%;
+		font-size: 14px;
+		color: #4A4A4A;
+	}
+
+	.postDetails-body-box-head-left-content-down {
+		min-width: 100px;
+		height: 49%;
+		font-size: 10px;
+	}
+
+	.postDetails-body-box-head-left-content-down div {
+		float: left;
+		margin-right: 10px;
+		line-height: 24px;
+	}
+
+	.postDetails-body-box-head-right-btn {
+		width: 65%;
+		height: 55%;
+		color: #fff;
+		background: rgba(103, 194, 58, 1);
+		border-radius: 2px;
+		line-height: 25px;
+		text-align: center;
+		font-size: 13px;
+		cursor: pointer;
+	}
+
+	.postDetails-body-box-body-title {
+		width: 100%;
+		min-height: 25px;
+		margin: 10px 0;
+		font-size: 12px;
+		line-height: 25px;
+		background: rgb(245, 245, 245);
+	}
+
+	.postDetails-body-box-body-content {
+		width: 100%;
+		min-height: 258px;
+		font-size: 12px;
+		line-height: 25px;
+
+	}
+
+	.postDetails-body-box-body-content-pic {
+		text-align: center;
+		font-size: 12px;
+		line-height: 365px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+	}
+
+	.postDetails-body-box-body-content-pic img {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 17px;
+	}
+
+	.postDetails_say {
+		color: #000000;
+		margin: 20px 0 5px;
+		font-size: 14px;
+		font-weight: 700;
+		opacity: 0.7;
+	}
+
+	.postDetails-body-box-pinglun {
+		width: 600px;
+		height: 35px;
+		border-bottom: 2px solid #E1E0E1;
+		position: absolute;
+		left: 0;
+	}
+
+	.postDetails-body-box-pinglun-box {
+		width: 600px;
+		height: 35px;
+	}
+
+	.postDetails-body-box-pinglun .content {
+		font-size: 13px;
+		line-height: 40px;
+		color: #4A4A4A;
+		margin-left: 17px;
+	}
+
+	.postDetails-body-box-xiangqing {
+		width: 100%;
+		min-height: 88px;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up {
+		margin-top: 10px;
+		width: 100%;
+		height: 45px;
+		margin-bottom: 6px;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up .xiangqing-up-left {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up .xiangqing-up-left img {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up .xiangqing-up-right {
+		width: 300px;
+		height: 45px;
+		float: left;
+		display: flex;
+		flex-direction: column;
+		font-size: 12px;
+		line-height: 22px;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up .xiangqing-up-right .xiangqing-name {
+		width: 300px;
+		height: 22px;
+		float: left;
+		color: #4A4A4A;
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-up .xiangqing-up-right .xiangqing-time {
+		width: 300px;
+		height: 22px;
+		float: left;
+
+	}
+
+	.postDetails-body-box-xiangqing .xiangqing-down {
+		width: 100%;
+		min-height: 30px;
+		font-size: 13px;
+		line-height: 24px;
+		color: #4A4A4A;
+		border-bottom: 1px solid #E1E0E1;
+	}
+
+	.audit {
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: 155px auto;
+		width: 600px;
+		height: 290px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101000;
+		display: none;
+		color: #4A4A4A;
+
+	}
+
+	.audit-body {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 94%;
+		min-height: 240px;
+	}
+
+	.audit-body-t {
+		width: 100%;
+		height: 40px;
+		display: flex;
+		align-items: center;
+
+	}
+
+	.audit-body-t div {
+		margin-right: 30px;
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+	}
+
+	.audit-body-t input {
+		margin-right: 5px;
+	}
+
+	.audit-body-m {
+		width: 100%;
+		height: 130px;
+	}
+
+	.audit-body-m textarea {
+		margin: 0px;
+		width: 561px;
+		height: 129px;
+		color: #797979;
+		line-height: 40px;
+	}
+
+	.audit-body-b {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.audit-body-b-n {
+		width: 70px;
+		height: 26px;
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		border: 1px solid #DCDCDC;
+		margin-right: 30px;
+		cursor: pointer;
+	}
+
+	.audit-body-b-y {
+		width: 71px;
+		height: 27px;
+		color: #fff;
+		background: rgba(103, 194, 58, 1);
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		cursor: pointer;
+
+	}
+
+	.reportBox {
+		display: none;
+	}
+
+	.report_box {
+		display: none;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: 155px auto;
+		width: 600px;
+		height: 320px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101000;
+		color: #4A4A4A;
+
+	}
+
+	.report_btn {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.report_btn_n {
+		width: 70px;
+		height: 26px;
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		border: 1px solid #DCDCDC;
+		margin-right: 30px;
+		cursor: pointer;
+	}
+
+	.report_btn_y {
+		width: 71px;
+		height: 27px;
+		color: #fff;
+		background: rgba(103, 194, 58, 1);
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		cursor: pointer;
+
+	}
+
+	#reportDetails {
+		margin-left: 20px;
+	}
+
+	.postDetails {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		width: 600px;
+		height: 600px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101;
+		display: none;
+	}
+
+	.postDetails-head,
+	.audit-head {
+		position: relative;
+		width: 100%;
+		height: 44px;
+		background: #283345;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	.postDetails-head-text,
+	.audit-head-text {
+		position: absolute;
+		left: 0;
+		line-height: 44px;
+		color: #F5F5F5;
+		font-size: 12px;
+		margin-left: 20px;
+		-webkit-touch-callout: none;
+		/* iOS Safari */
+
+		-webkit-user-select: none;
+		/* Chrome/Safari/Opera */
+
+		-khtml-user-select: none;
+		/* Konqueror */
+
+		-moz-user-select: none;
+		/* Firefox */
+
+		-ms-user-select: none;
+		/* Internet Explorer/Edge */
+
+		user-select: none;
+		/* Non-prefixed version, currently
+
+           not supported by any browser */
+	}
+
+	.postDetails-body {
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 600px;
+		height: 540px;
+		position: relative;
+		color: #797979;
+	}
+
+	.postDetails-body-up {
+		position: fixed;
+		width: 600px;
+		height: 30px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background: #FFFFFF;
+		z-index: 10000;
+		padding-bottom: 7px;
+	}
+
+	.postDetails_box {
+		width: 600px;
+		height: 77px;
+	}
+
+	.train_pic {
+		width: 14.5%;
+	}
+
+	.train_name {
+		width: 21%;
+	}
+
+	.train_difficulty {
+		width: 10.5%;
+	}
+
+	.train_position {
+		width: 10%;
+	}
+
+	.train_apparatus {
+		width: 33%;
+	}
+
+	.train_operation {
+		width: 10%;
+	}
+
+	.trainContentList {
+		margin-left: 3.5%;
+		width: 560px;
+		font-size: 13px;
+		border-collapse: collapse;
+	}
+
+	.trainContentList tbody tr {
+		border-bottom: 1px solid #E0E6ED;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	.video-trainProgram {
+		width: 10%;
+	}
+
+	.name-trainProgram {
+		width: 14%;
+	}
+
+	.difficulty-trainProgram {
+		width: 7%;
+	}
+
+	.position-trainProgram {
+		width: 7%;
+	}
+
+	.apparatus-trainProgram {
+		width: 21%;
+	}
+
+	.operation-trainProgram {
+		width: 8%;
+	}
+
+	.postDetails_info {
+		width: 561px;
+		height: 40px;
+		padding-left: 24px;
+		position: fixed;
+		margin-top: 37px;
+		background: #E5E9F2;
+		font-weight: 500;
+
+	}
+
+	.postDetails_info div {
+		font-size: 12px;
+		color: rgba(74, 74, 74, 1);
+		font-weight: 600;
+		line-height: 40px;
+		float: left;
+	}
+
+	#train_searchBtn {
+		width: 80px;
+		height: 32px;
+		font-size: 14px;
+		color: #fff;
+		line-height: 32px;
+		background: rgba(103, 194, 58, 1);
+		border: 0px;
+		border-radius: 2px;
+		margin-left: 20px;
+	}
+
+	.audit {
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: 155px auto;
+		width: 600px;
+		height: 290px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101000;
+		display: none;
+		color: #4A4A4A;
+
+	}
+
+	.audit-body {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 94%;
+		min-height: 240px;
+	}
+
+	.audit-body-t {
+		width: 100%;
+		height: 40px;
+		display: flex;
+		align-items: center;
+
+	}
+
+	.audit-body-t div {
+		margin-right: 30px;
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+	}
+
+	.audit-body-t input {
+		margin-right: 5px;
+	}
+
+	.audit-body-m {
+		width: 100%;
+		height: 130px;
+	}
+
+	.audit-body-m textarea {
+		margin: 0px;
+		width: 561px;
+		height: 129px;
+		color: #797979;
+		line-height: 40px;
+	}
+
+	.audit-body-b {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.audit-body-b-n {
+		width: 70px;
+		height: 26px;
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		border: 1px solid #DCDCDC;
+		margin-right: 30px;
+		cursor: pointer;
+	}
+
+	.audit-body-b-y {
+		width: 71px;
+		height: 27px;
+		color: #fff;
+		background: rgba(103, 194, 58, 1);
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		cursor: pointer;
+
+	}
+
+	.reportBox {
+		display: none;
+	}
+
+	.report_box {
+		display: none;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: 155px auto;
+		width: 600px;
+		height: 320px;
+		border-radius: 5px;
+		background-color: #fff;
+		z-index: 101000;
+		color: #4A4A4A;
+
+	}
+
+	.report_btn {
+		width: 100%;
+		height: 60px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.report_btn_n {
+		width: 70px;
+		height: 26px;
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		border: 1px solid #DCDCDC;
+		margin-right: 30px;
+		cursor: pointer;
+	}
+
+	.report_btn_y {
+		width: 71px;
+		height: 27px;
+		color: #fff;
+		background: rgba(103, 194, 58, 1);
+		border-radius: 2px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 13px;
+		cursor: pointer;
+
+	}
+
+	#reportDetails {
+		margin-left: 20px;
+	}
+
+	.relevance_btn {
+		cursor: pointer;
+
+	}
+
+	.PARTY_DISABLED {
+		color: red;
+	}
+
+	.PARTY_ENABLED {
+		color: rgba(103, 194, 58, 1);
+	}
+</style>
+
+<body>
+	<div class="actionLib-page" id="content">
+		<div class="topBar">
+			<div class="searchcondition">
+				<span>器械名称:</span>
+				<input type="text" name="" id="searchName">
+			</div>
+			<button id="instrumentSearchBtn" class="instrumentSearchBtn">搜索</button>
+			<input id="addInstrument" type="button" value="+新增" class="addBtn">
+
+
+
+			<div id="box"></div>
+			<div class="postDetailsBox" id="postDetails">
+				<div class="postDetails-head windowClose">
+					<div class="postDetails-head-text">新增器械</div>
+				</div>
+				<div class="postDetails-body">
+					<div id="postDetails-body-box" class="postDetails-body-box">
+						<div class="postDetails-body-box-body">
+							<div>器械名称：<input id="name" type="text"></div>
+							<div style="width:100%;display:flex;margin-top: 30px;">
+								<div>器械图片：</div>
+								<div style="position: relative">
+									<text style="color:#67C23A;cursor: pointer;position:absolute;width: 300px;"
+										id="uploadImage_btn">+上传器械图片(限制1张，最小80*80px)</text>
+									<input type="file" name="files" style="position: absolute;opacity: 0;"
+										id="train_image" accept="image/*">
+								</div>
+							</div>
+							<div class="upImageBox show_fileBox"></div>
+						</div>
+					</div>
+					<button id="sub" class="instrumentSearchBtn" data-id='' style="float: right">提交</button>
+					<button  class="instrumentSearchBtn windowClose" style="float: right">关闭</button>
+				</div>
+			</div>
+		</div>
+		<div class="contentBox">
+			<table class="contentList">
+				<thead>
+					<tr>
+						<th class="checkBox">
+							<label>
+								<input type="checkbox" value="" id="selectall-actionLib">
+							</label>
+						</th>
+						<th class="lengthTime-actionLib">器械编号</th>
+						<th class="video-actionLib upFile">器械图片</th>
+						<th class="name-actionLib">器械名称</th>
+						<th class="content-actionLib">创建时间</th>
+						<th class="operation-actionLib handleBtn"><label>操作</label></th>
+					</tr>
+				</thead>
+				<tbody id="info_box"></tbody>
+			</table>
+			<div class="bottom-pageNum">
+				<div class="bottom-pageNum-box">
+					<div class="showCheck">
+						<select id="showNum">
+							<option value="10"><span>10</span> 条/页</option>
+							<option value="50"><span>50</span> 条/页</option>
+							<option value="100"><span>100</span> 条/页</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script id="info_template" type="text/x-handlebars-template">
+		<tr data-id='{{id}}' data-name = "{{name}}" data-img ='{{imageUrl}}'>
+			<td class="checkBox">
+				<label>
+					<input type="checkbox" value="" class="actionLibItem">
+				</label>
+			</td>
+			<td class="video-actionLib ">{{id}}</td>
+			<td class="num-actionLib">
+				<img style="width: 40px;height:40px;margin-top:20px" src="{{imageUrl}}" alt="null.png" />
+			</td>
+			<td class="name-actionLib">{{name}}</td>
+			<td class="lengthTime-actionLib">{{createdTime}}</td>
+			<td>
+				<div class="operationBox">
+					<div id="modify">修改</div>
+					<div id="delete">删除</div>
+				</div>
+			</td>
+		</tr>
+	</script>
+	<script type="text/javascript" src="javascript/instrument.js"></script>
+	<script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+
+</html>

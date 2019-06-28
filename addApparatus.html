@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>添加器械</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/loading.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="css/base_details.css">
+    <link rel="stylesheet" type="text/css" href="css/addApparatus.css">
+    <!--
+    <link rel="stylesheet" href="javascript/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="javascript/kindeditor/plugins/code/prettify.css" />
+    -->
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="javascript/jQuery-File-Upload-9.25.1/css/jquery.fileupload-ui.css">
+    <script charset="utf-8" type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
+    <script src="cookie/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+    <!--
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/kindeditor/plugins/code/prettify.js"></script>
+    -->
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/vendor/jquery.ui.widget.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.iframe-transport.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-process.js"></script>
+    <script src="javascript/jQuery-File-Upload-9.25.1/js/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="javascript/aliyun-oss-sdk-4.4.4.min.js"></script>
+</head>
+
+<body>
+    <div class="addApparatus-page" id="content">
+        <div class="addApparatus-box primaryContainer">
+            <p>添加器械</p>
+            <div class="message-item">
+                <span>器械名称</span>
+                <input type="text" name="" id="name-apparatus" maxlength="50">
+            </div>
+            <div class="message-item">
+                <span>器械类型</span>
+                <select id="type-apparatus">
+                    <option></option>
+                </select>
+            </div><div class="message-item">
+                <span>器械价格</span>
+                <input type="text" name="" id="price-apparatus" maxlength="50">
+          <!--   </div><div class="message-item">
+                <span>商品数量</span>
+                <input type="text" name="" id="" maxlength="50">
+            </div><div class="message-item">
+                <span>剩余数量</span>
+                <input type="text" name="" id="" maxlength="50">
+            </div> -->
+            <div class="message-item upload_file">
+                <span>商品banner</span>
+                <div class="uploadImage upload_fileBox">
+                    <span class="uploadImage_btn">+上传banner图片</span>
+                    <input type="file" name="files" style="display: none;" id="apparatus_image" accept="image/*">
+                    <div class="sk-circle img_loading">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+                <div class="upImageBox show_fileBox"></div>
+            </div>
+            <div class="message-item upload_file">
+                <span>训练视频</span>
+                <div class="uploadVideo upload_fileBox">
+                    <span class="uploadVideo_btn">+上传训练视频</span>
+                    <input type="file" name="files" style="display: none;" id="apparatus_video" accept="video/*">
+                    <div class="sk-circle video_loading">
+                        <div class="sk-circle1 sk-child"></div>
+                        <div class="sk-circle2 sk-child"></div>
+                        <div class="sk-circle3 sk-child"></div>
+                        <div class="sk-circle4 sk-child"></div>
+                        <div class="sk-circle5 sk-child"></div>
+                        <div class="sk-circle6 sk-child"></div>
+                        <div class="sk-circle7 sk-child"></div>
+                        <div class="sk-circle8 sk-child"></div>
+                        <div class="sk-circle9 sk-child"></div>
+                        <div class="sk-circle10 sk-child"></div>
+                        <div class="sk-circle11 sk-child"></div>
+                        <div class="sk-circle12 sk-child"></div>
+                    </div>
+                </div>
+                <div class="upVideoBox show_fileBox"></div>
+            </div>
+            <div class="message-item content-box">
+                <span>产品使用说明</span>
+                <div class="actionSummary commentBox">
+                    <!--<textarea id="richTextBox" name="content"></textarea>-->
+                    <textarea name="schtmlnr" id="schtmlnr"></textarea>
+                </div>
+            </div>
+            <div class="message-item submitBox">
+                <button class="submitBtn">保存</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <script charset="utf-8" type="text/javascript" src="javascript/addApparatus.js"></script>
+    <script charset="utf-8" type="text/javascript" src="javascript/partdata.js"></script>
+</body>
+
+</html>

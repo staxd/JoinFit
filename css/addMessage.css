@@ -1,0 +1,152 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #EFF2F7;
+}
+
+select{
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}	
+	
+select::-ms-expand { display: none; }
+
+.addMessage-page{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.addMessage-box{
+	padding-left: 40px;
+	padding-top: 40px;
+	overflow: hidden;
+}
+
+.addMessage-page p{
+	width:64px;
+	height:14px;
+	font-size:16px;
+	color:rgba(103,194,58,1);
+	line-height:14px;
+	margin-bottom: 30px;
+}
+
+.message-item{
+	margin-bottom: 14px;
+}
+
+.message-item span{
+	font-size: 14px;
+	line-height: 18px;
+	color: rgba(74,74,74,1);
+	margin-right: 12px;
+}
+
+.message-item select{
+	width:507px;
+	height:34px;
+	font-size: 14px;
+	color: #4A4A4A;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(189,189,189,1);
+	background-image: url(../img/drop-downbtn.png);
+	background-repeat: no-repeat;
+	background-position: 470px center;
+	padding-right: 38px;
+	padding-left: 10px;
+}
+
+.message-item input{
+	display: inline-block;
+	width:500px;
+	height:32px;
+	background:rgba(255,255,255,1);
+	border-radius:2px;
+	border:1px solid rgba(189,189,189,1);
+	padding-left: 5px;
+	background-image: url(../img/calendar.png);
+	background-repeat: no-repeat;
+	background-position: 470px center;
+}
+
+.messageContent{
+	margin-top: 20px;
+}
+
+.messageContent label{
+	display: block;
+	width: 70%;
+	height: 40px;
+	background:rgba(216,216,216,1);
+}
+
+.messageContent label span{
+	margin-left: 19px;
+	font-size: 12px;
+	color:rgba(74,74,74,1);
+	line-height: 40px;
+}
+
+.messageContent textarea{
+	display: block;
+	width: 70%;
+	/*max-height: 550px;*/
+	max-height: 210px;
+	min-height: 180px;
+	background-color: #EFF2F7;
+	border: none;
+}
+
+.submitBox{
+	margin-top: 20px;
+	border-top: 1px solid #E0E6ED;
+	width: 428px;
+	overflow: hidden;
+}
+
+.submitBox button{
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.submitBtn{
+	width:88px;
+	height:36px;
+	font-size:14px;
+	color: #fff;
+	line-height: 36px;
+	background:rgba(103,194,58,1);
+	border-radius:2px;
+	border: none;
+}
+
+.draft{
+	width:88px;
+	height:36px;
+	font-size:14px;
+	color: #fff;
+	line-height: 36px;
+	background:rgba(103,194,58,1);
+	border-radius:2px;
+	border: none;
+}
+
+.cancel{
+	width:64px;
+	height:36px;
+	border-radius:2px;
+	font-size:14px;
+	color: #000;
+	line-height: 36px;
+	border:1px solid rgba(196,196,196,1);
+	background: #fff;
+}

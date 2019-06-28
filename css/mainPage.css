@@ -1,0 +1,256 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: #EFF2F7;
+	height: 100%;
+	min-width: 1358px;
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	overflow: auto;
+}
+
+a{
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.nav{
+	z-index: 9;
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	position: relative;
+}
+
+.logo{
+	margin-left: 20px;
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.logo img{
+	display: inline-block;
+	float: left;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.logo span{
+	clear: both;
+	display: inline-block;
+	float: left;
+	font-family:HelveticaNeue-Bold;
+	font-size: 18px;
+	font-weight: bold;
+	color: #324057;
+	line-height: 60px;
+	margin-left: 38px;
+}
+
+.positionNav{
+	margin-left: 91px;
+	float: left;
+	overflow: hidden;
+}
+
+.personalList{
+	float: right;
+	height: 100%;
+	overflow: hidden;
+}
+
+.personalList a{
+	float: left;
+	height: 100%;
+	margin-right: 32px;
+	display: inline-block;
+	line-height: 60px;
+}
+
+.personalList a img{
+	vertical-align: middle;
+}
+
+a.avatar{
+	cursor: auto;
+}
+
+.avatar img{
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	overflow: hidden;
+}
+
+.sideNav{
+	width:200px;
+	min-height:100%;
+	min-height:-moz-calc(100% - 60px);
+	min-height:-webkit-calc(100% - 60px);
+	min-height: calc(100% - 60px);
+	background:rgba(50,64,87,1);
+	border-radius:2px;
+	position: relative;
+	bottom: 0;
+	overflow: auto;
+	float: left;
+
+}
+
+.emptyBox{
+	margin-top: 10px;
+}
+
+.sideNav-item{
+	width: 100%;
+	height: 56px;
+	font-size:14px;
+	color: #C0CCDA;
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	cursor: pointer;
+}
+
+.sideNav-item a{
+	margin-left: 48px;
+	line-height: 56px;
+}
+
+.sideNav-item img{
+	margin-left: 60px;
+	vertical-align: middle;
+}
+
+.userManagement{
+	background-image: url(../img/user.png);
+}
+
+.coachManagement{
+	background-image: url(../img/coach.png);
+}
+
+.circleManagement{
+	background-image: url(../img/circle.png);
+}
+
+.integralMall{
+	background-image: url(../img/setUp1.png);
+}
+
+.orderManagement{
+	background-image: url(../img/classification.png);
+}
+
+.marketingManagement{
+	background-image: url(../img/marketing.png);
+}
+
+.system-setup{
+	background-image: url(../img/setUp.png);
+}
+
+.actived{
+	background-color: #475669;
+}
+
+.moreMenu-active{
+	color: rgba(103,194,58,1);
+}
+
+.showBox{
+	display: none;
+}
+
+.marketType{
+	width: 100%;
+	overflow: hidden;
+}
+
+.moreMenu-item{
+	width: 100%;
+	height: 50px;
+	font-size:14px;
+	color: #C0CCDA;
+	background-color: #1F2D3D;
+}
+
+.moreMenu-item a{
+	margin-left: 48px;
+	line-height: 50px;
+}
+
+.mainContent{
+	float: left;
+	width: 94%;/*写给不支持calc()的浏览器*/
+	width:-moz-calc(100% - 200px - 10px * 2);
+	width:-webkit-calc(100% - 200px - 10px * 2);
+	width: calc(100% - 200px - 10px * 2);
+	min-height: 90%;/*写给不支持calc()的浏览器*/
+	min-height:-moz-calc(100% - 60px - 10px * 2);
+	min-height:-webkit-calc(100% - 60px - 10px * 2);
+	min-height: calc(100% - 60px - 10px * 2);
+	margin: 10px;
+}
+
+#signOut{
+	display: none;
+	position: absolute;
+	top: 60px;
+	right: 10px;
+	line-height: 20px;
+	padding: 5px;
+	background: #DCDCDC;
+	border: 1px solid #DCDCDC;
+}
+
+.arrow{
+	border-bottom: 10px solid #DCDCDC;
+	border-right: 10px solid #fff;
+	border-left: 10px solid #fff;
+	border-top: 10px solid #fff;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top:-20px;
+	left:30px;
+}
+
+.setUp:hover #signOut{
+	display: block;
+}
+
+/*以下功能未完成暂时隐藏*/
+.integralMall{
+	display: none;
+}
+
+.orderManagement{
+	display: none;
+}
+
+.messageManage{
+	display: none;
+}
+
+.modifyPassword{
+	display: none;
+}
+
+a.systemMessage{
+	display: none;
+}
+
+.apparatusMall{
+	display: none;
+}

@@ -1,0 +1,51 @@
+input.timeBox{
+	background-image: url(../img/calendar.png);
+	background-repeat: no-repeat;
+	background-position: 470px center;
+}
+
+.articleContent{
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.articleContent textarea{
+	display: block;
+	width: 70%;
+	max-height: 400px;
+	min-height: 38px;
+	background-color: #EFF2F7;
+	border: none;
+}
+
+.articleContent span{
+	min-width: 0px;
+}
+
+span.select2-selection.select2-selection--single{
+	height: 33px;
+	width: 507px;
+}
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--open{
+	height: 33px;
+}
+span.select2.select2-container.select2-container--default.select2-container--focus{
+	height: 33px;
+}
+
+span.select2-container--default .select2-selection--single .select2-selection__arrow{
+	height: 33px;
+	right: -12px;
+}
+
+span.select2.select2-container.select2-container--default.select2-container--below{
+	height: 33px;
+}
+
+span.select2.select2-container.select2-container--default{
+	height: 33px;
+}
+
+#select2-banner_typeSubcategories-container{
+	line-height: 33px;
+}

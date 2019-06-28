@@ -1,0 +1,39 @@
+.addBtn{
+	right: 20px;
+}
+
+.no-dryGoods{
+	width: 10%;
+}
+
+.img-dryGoods{
+	width: 10%;
+}
+
+/*.type-dryGoods{
+	width: 10%;
+}
+*/
+.title-dryGoods{
+	width: 20%;
+}
+
+/*.content-dryGoods{*/
+	/*width: 20%;*/
+/*}*/
+
+.state-dryGoods{
+	width: 13%;
+}
+
+.takeEffect-dryGoods{
+	width: 13%;
+}
+
+.invalid-dryGoods{
+	width: 13%;
+}
+
+.operation-dryGoods{
+	width: 10%;
+}

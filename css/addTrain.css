@@ -1,0 +1,238 @@
+.maskLayer,.maskLayer_coach {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    display: none;
+}
+
+.chooseBox {
+    position: absolute;
+    left: 200px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    min-width: 670px;
+    min-height: 300px;
+    background-color: #fff;
+    opacity: 1;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+
+}
+
+.chooseBox_title {
+    width: 100%;
+    height: 50px;
+    background: rgba(40, 51, 69, 1);
+    border-radius: 4px 4px 0px 0px;
+}
+
+.chooseBox_title label {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    color: rgba(255, 255, 255, 1);
+    line-height: 50px;
+    margin-left: 30px;
+}
+
+.searchBox_choose {
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.search_content {
+    float: left;
+    margin-left: 30px;
+}
+
+.search_content label {
+    font-size: 13px;
+    font-family: MicrosoftYaHeiUI;
+    color: rgba(74, 74, 74, 1);
+    line-height: 50px;
+}
+
+.search_content input {
+    display: inline-block;
+    width: 195px;
+    height: 32px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(189, 189, 189, 1);
+    padding-left: 5px;
+}
+
+.search_content select {
+    width: 150px;
+    height: 32px;
+    font-size: 13px;
+    color: #4A4A4A;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(189, 189, 189, 1);
+    background-image: url(../img/drop-downbtn.png);
+    background-repeat: no-repeat;
+    background-position: 124px center;
+    padding-right: 26px;
+    padding-left: 14px;
+}
+
+.searchBox_choose button {
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px;
+    background: rgba(103, 194, 58, 1);
+    border: 0px;
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.chooseBox_list {
+    width: 100%;
+    max-height: 160px;
+    min-height: -moz-calc(100% - 130px);
+    min-height: -webkit-calc(100% - 130px);
+    min-height: calc(100% - 130px);
+    overflow-y: auto;
+}
+
+.chooseBox_listConetent {
+    width: 100%;
+    height: 100%;
+}
+
+.chooseBox_listConetent tbody tr {
+    height: 50px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 50px;
+    text-align: left;
+    color: rgba(74, 74, 74, 1);
+    background-color: #fff;
+    border-bottom: 1px solid #E0E6ED;
+}
+
+.actionChoose_item:hover {
+    background: rgba(220, 220, 220, 1);
+}
+
+.action_id {
+    width: 10%;
+}
+
+.action_img {
+    width: 10%;
+}
+
+.action_img img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.action_name {
+    width: 15%;
+}
+
+.action_time {
+    width: 10%;
+}
+
+.action_apparatus {
+    width: 10%;
+}
+
+.coachChoose_item:hover{
+    background: rgba(220, 220, 220, 1);
+}
+
+.coach_img {
+    width: 10%;
+}
+
+.coach_img img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.coach_name {
+    width: 10%;
+}
+
+.coach_phone {
+    width: 10%;
+}
+
+.coach_store {
+    width: 15%;
+}
+
+.coach_associatedStatus {
+    width: 10%;
+}
+
+.empty {
+    width: 20%;
+}
+
+.pagingBox {
+    width: 100%;
+    height: 30px;
+}
+
+.pagingBox-content,.pagingBox-content_coach {
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.pagingBox-content .paginationjs .paginationjs-pages li>a,.pagingBox-content_coach .paginationjs .paginationjs-pages li>a{
+    min-width: 20px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.pagingBox-content .paginationjs .paginationjs-pages li.active>a,.pagingBox-content_coach .paginationjs .paginationjs-pages li.active>a{
+    height: 20px;
+    line-height: 20px;
+}
+
+.coach_associatedStatus label{
+    color: #3CB034;
+}
+
+.related{
+    disabled: disabled;
+}
+
+.show_fileBox a{
+    margin: 0 10px 20px 0;
+}
+
+.video_name_id{
+    position: absolute;
+    width: 60px;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -30px;
+}

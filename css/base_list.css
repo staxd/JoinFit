@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EFF2F7;
+}
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+option::-ms-expand {
+    display: none;
+}
+
+option {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topBar {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    position: relative;
+}
+
+.contentBox {
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.contentList {
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.searchcondition {
+    float: left;
+    margin-left: 20px;
+    line-height: 60px;
+    font-size: 13px;
+}
+
+.searchcondition select {
+    width: 150px;
+    height: 32px;
+    font-size: 13px;
+    color: #4A4A4A;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(189, 189, 189, 1);
+    background-image: url(../img/drop-downbtn.png);
+    background-repeat: no-repeat;
+    background-position: 124px center;
+    padding-right: 26px;
+    padding-left: 14px;
+    z-index: 1;
+}
+
+.searchcondition input {
+    width: 150px;
+    height: 32px;
+    padding-left: 5px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(189, 189, 189, 1);
+}
+
+.topBar button, .addBtn {
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px;
+    background: rgba(103, 194, 58, 1);
+    border: 0px;
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.contentBox,
+.contentList {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contentList {
+    border: 0;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.checkBox {
+    position: relative;
+}
+
+.contentList input {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid rgba(189, 189, 189, 1);
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.contentList thead tr {
+    height: 44px;
+    font-size: 13px;
+    color: rgba(74, 74, 74, 1);
+    background: rgba(229, 233, 242, 1);
+    text-align: left;
+}
+
+.contentList tbody tr {
+    height: 60px;
+    font-size: 13px;
+    line-height: 60px;
+    text-align: left;
+    color: rgba(74, 74, 74, 1);
+    background-color: #fff;
+    border-bottom: 1px solid #E0E6ED;
+    overflow: hidden;
+}
+
+.checkBox {
+    width: 5%;
+}
+
+.upFile img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.operationBox {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.handleBtn label {
+    margin-left: 10px;
+}
+
+.operationBox div {
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.bottom-pageNum {
+    padding: 20px 0;
+    height: 70px;
+    background-color: #fff;
+    position: relative;
+}
+
+.bottom-pageNum-box {
+    float: right;
+}
+
+.showCheck {
+    float: left;
+    margin-right: 20px;
+}
+
+.showCheck select {
+    width: 89px;
+    height: 28px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(211, 220, 230, 1);
+    background-image: url(../img/drop-downbtn1.png.png);
+    background-repeat: no-repeat;
+    background-position: 68px center;
+    padding-right: 25px;
+    padding-left: 5px;
+}
+
+.paginationjs {
+    float: left;
+    margin-right: 20px;
+}
+
+div.delete_btn {
+    pointer-events: none;
+    cursor: no-drop;
+    color: rgba(229, 233, 242, 0.9);
+}
+
+.state_enabel {
+    color: #67C23A;
+}
+
+.state_disables {
+    color: #E51C23;
+}
